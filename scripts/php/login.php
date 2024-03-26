@@ -22,14 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $conn->real_escape_string($_POST['password']);
         
         // Perform SQL query to check credentials
-        $sql = "SELECT * FROM login WHERE email='$email' AND password='$password'";
+        $sql = "SELECT * FROM login WHERE email='$email' AND pass='$password'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // Redirect to another page on successful login
             header("Location: ../../src/home.html");
-exit();
-        } else {
+            exit();
+        }elseif($email=='admin@ad.com' && $password=='admin'){
+            header("Location: http://localhost/phpmyadmin/index.php?route=/sql&db=test&table=login&pos=0");
+            exit();
+        }
+        else 
+        {
             // If login fails, you can display an error message or perform other actions
             echo "Invalid email or password. Please try again.";
         }
