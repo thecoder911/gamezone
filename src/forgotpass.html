@@ -10,14 +10,14 @@
 <body>
   <div class="wrapper">
     <div class="forgot-password-box">
-      <form action="">
+      <form action="../scripts/php/forgotpass.php" method="post">
         <h2>Forgot Password</h2>
 
         <div class="input-box">
           <span class="icon">
             <ion-icon name="mail"></ion-icon>
           </span>
-          <input type="email" required>
+          <input type="email" name="email" required>
           <label>Email</label>
         </div>
 
@@ -25,7 +25,7 @@
           <span class="icon">
             <ion-icon name="lock-closed"></ion-icon>
           </span>
-          <input type="password" required>
+          <input type="password" name="password" required>
           <label>New Password</label>
         </div>
 
