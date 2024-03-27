@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Snake Game | Gamedivers</title>
     <link href="../media/weblogo.png" rel="icon" type="image/png" />
 
 
@@ -186,11 +186,13 @@ function gameOver() {
     clearInterval(gameInterval);
     alert("Game Over! Your score: " + score);
 
+    
+
     // Send player information and game stats to the server
     let data = {
         playerName: "omshrikhande", // Replace with actual player name
         score: score,
-        gameResult: "win/" // Replace with actual game result
+        gameResult: "" // Replace with actual game result
     };
 
     // Send data to the server using AJAX

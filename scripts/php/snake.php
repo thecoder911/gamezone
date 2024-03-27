@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -21,9 +22,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = json_decode(file_get_contents("php://input"), true);
 
     // Extract player information and game statistics
-    $playerName = $data['playerName'];
+    $playerName = $_SESSION["username"];
     $score = $data['score'];
-    $gameResult = $data['gameResult'];
+
+    if($score<=10){
+        $gameResult = "lose";
+    }
+    else{
+        $gameResult = "win";
+    }
+    
     $gameDate = date("Y-m-d H:i:s");
 
     // Prepare and execute SQL statement to insert data into the database

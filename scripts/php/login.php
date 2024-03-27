@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Database connection parameters
 $servername = "localhost";
 $username = "root"; // Your MySQL username
@@ -20,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Sanitize inputs to prevent SQL injection
         $email = $conn->real_escape_string($_POST['email']);
         $password = $conn->real_escape_string($_POST['password']);
-        
+        $_SESSION["username"]= $email;
         // Perform SQL query to check credentials
         $sql = "SELECT * FROM login WHERE email='$email' AND pass='$password'";
         $result = $conn->query($sql);
