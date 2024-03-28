@@ -252,7 +252,67 @@ body {
     }
   } 
 
-/* respnsive ness */
+
+/* explain games */
+.explainom{
+  width: 80%;
+  height: 350px;
+ border-style: solid;
+ border-color: #000;
+  border-radius: 10px;
+  padding: 1%;
+  margin-left: 10%;
+  color: #000;
+  font-family: Times New Roman;
+  display: flex;
+  list-style-type: circle;  
+ 
+}
+.exp{
+  
+  flex: none;
+  width: 600px;
+  height: 400px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.exp2{
+  
+  flex: none;
+  width: 600px;
+  height: 400px;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.exp3{
+  
+  flex: none;
+  width: 600px;
+  height: 400px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: justify;
+}
+.explainom > img{
+  flex: none;
+  padding: 2%;
+  width:300px;
+  height: 300px;
+  float:right;
+  margin-left: 10%;
+}
+
+.explain{
+  margin-bottom: 5%;
+  display: flex;
+}
+  /* respnsive ness */
+
+
+
 
 @media screen and (min-width: 960px) {
 

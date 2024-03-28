@@ -15,6 +15,13 @@
     height: 800px;
     border: 1px solid black;
     margin: 20px auto;
+    background-color: black;
+   
+}
+body{
+   background-image: url("https://wallpapers.com/images/high/green-snake-game-character-bqvxt2p5oibadgqn.webp");
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 button {
@@ -26,7 +33,7 @@ button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
 }
 
 button:hover {
@@ -133,12 +140,25 @@ function drawSnake() {
     snake.forEach(segment => {
         ctx.fillRect(segment.x * CELL_SIZE, segment.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
     });
+    var img = new Image();
+    img.onload = function() {
+        // Assuming snake[0] is the head of the snake
+        ctx.drawImage(img, snake[0].x * CELL_SIZE, snake[0].y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+    };
+    img.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/snake-head-757502.png';
 }
 
 // Draw the fruit
-function drawFruit() {
-    ctx.fillStyle = "red";
-    ctx.fillRect(fruit.x * CELL_SIZE, fruit.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+function drawFruit() {// Draw fruit as a rectangle
+    // ctx.fillStyle = "red";
+    // ctx.fillRect(fruit.x * CELL_SIZE, fruit.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+    
+    // Draw fruit as an image
+    var img = new Image();
+    img.onload = function() {
+        ctx.drawImage(img, fruit.x * CELL_SIZE, fruit.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+    };
+    img.src = 'https://t4.ftcdn.net/jpg/02/52/93/81/360_F_252938192_JQQL8VoqyQVwVB98oRnZl83epseTVaHe.jpg';
 }
 
 // Generate new fruit
